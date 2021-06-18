@@ -108,7 +108,7 @@ namespace WorkLogTimer
 
                 System.Media.SystemSounds.Hand.Play();
 
-                MessageBox.Show("Take a break!");
+                MessageBox.Show("Take a break, hey!");
 
                 Console.Beep();
 
