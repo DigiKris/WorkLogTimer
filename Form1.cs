@@ -22,16 +22,12 @@ namespace WorkLogTimer
         {
             this.buttonWorkStop.Enabled = false;
 
-
-
             for (int i = 0; i < 60; i++)
 
             {
 
                 this.comboBoxWorkHours.Items.Add(i.ToString());
-
                 this.comboBoxWorkMinutes.Items.Add(i.ToString());
-
                 this.comboBoxWorkSeconds.Items.Add(i.ToString());
 
             }
@@ -48,8 +44,6 @@ namespace WorkLogTimer
         {
             this.buttonWorkStart.Enabled = false;
             this.buttonWorkStop.Enabled = true;
-
-
 
             int hours = int.Parse(this.comboBoxWorkHours.SelectedItem.ToString());
             int minutes = int.Parse(this.comboBoxWorkMinutes.SelectedItem.ToString());
