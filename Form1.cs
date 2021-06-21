@@ -63,11 +63,11 @@ namespace WorkLogTimer
             this.buttonWorkStart.Enabled = true;
             this.timerWork.Enabled = false;
 
-            int hours = totalSeconds / 3600;
+            /*int hours = totalSeconds / 3600;
             int minutes = totalSeconds / 60;
             int seconds = totalSeconds - (minutes * 60);
 
-            this.labelWorkCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
+            this.labelWorkCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');*/
         }
         #endregion
 
@@ -75,19 +75,14 @@ namespace WorkLogTimer
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (totalSeconds > 0)
-
             {
-
                 totalSeconds--;
-
+                
                 int hours = totalSeconds / 3600;
-
-                int minutes = totalSeconds / 60;
-
-                int seconds = totalSeconds - (minutes * 60);
-
+                int minutes = totalSeconds / 60 % 60;
+                int seconds = totalSeconds % 60;
+                
                 this.labelWorkCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
-
             }
 
             else
@@ -98,11 +93,19 @@ namespace WorkLogTimer
 
                 System.Media.SystemSounds.Hand.Play();
 
-                MessageBox.Show("Take a break, hey!");
+                MessageBox.Show("Take a break!");
 
                 Console.Beep();
 
             }
+        }
+        #endregion
+
+        #region Test region
+
+        public static class test
+        {
+            
         }
         #endregion
     }
