@@ -63,11 +63,11 @@ namespace WorkLogTimer
             this.buttonWorkStart.Enabled = true;
             this.timerWork.Enabled = false;
 
-            /*int hours = totalSeconds / 3600;
-            int minutes = totalSeconds / 60;
-            int seconds = totalSeconds - (minutes * 60);
+            int hours = totalSeconds / 3600;
+            int minutes = totalSeconds / 60 % 60;
+            int seconds = totalSeconds % 60;
 
-            this.labelWorkCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');*/
+            this.labelWorkCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
         }
         #endregion
 
@@ -86,9 +86,7 @@ namespace WorkLogTimer
             }
 
             else
-
             {
-
                 this.timerWork.Stop();
 
                 System.Media.SystemSounds.Hand.Play();
@@ -96,7 +94,6 @@ namespace WorkLogTimer
                 MessageBox.Show("Take a break!");
 
                 Console.Beep();
-
             }
         }
         #endregion
