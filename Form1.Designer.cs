@@ -41,6 +41,7 @@ namespace WorkLogTimer
             this.buttonWorkStart = new System.Windows.Forms.Button();
             this.buttonWorkStop = new System.Windows.Forms.Button();
             this.timerWork = new System.Windows.Forms.Timer(this.components);
+            this.buttonWorkPause = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelWorkHours
@@ -98,7 +99,7 @@ namespace WorkLogTimer
             // 
             this.labelWorkCountdown.AutoSize = true;
             this.labelWorkCountdown.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelWorkCountdown.Location = new System.Drawing.Point(68, 58);
+            this.labelWorkCountdown.Location = new System.Drawing.Point(77, 58);
             this.labelWorkCountdown.Name = "labelWorkCountdown";
             this.labelWorkCountdown.Size = new System.Drawing.Size(119, 37);
             this.labelWorkCountdown.TabIndex = 6;
@@ -106,7 +107,7 @@ namespace WorkLogTimer
             // 
             // buttonWorkStart
             // 
-            this.buttonWorkStart.Location = new System.Drawing.Point(51, 98);
+            this.buttonWorkStart.Location = new System.Drawing.Point(17, 98);
             this.buttonWorkStart.Name = "buttonWorkStart";
             this.buttonWorkStart.Size = new System.Drawing.Size(75, 23);
             this.buttonWorkStart.TabIndex = 7;
@@ -116,7 +117,7 @@ namespace WorkLogTimer
             // 
             // buttonWorkStop
             // 
-            this.buttonWorkStop.Location = new System.Drawing.Point(133, 97);
+            this.buttonWorkStop.Location = new System.Drawing.Point(177, 97);
             this.buttonWorkStop.Name = "buttonWorkStop";
             this.buttonWorkStop.Size = new System.Drawing.Size(75, 23);
             this.buttonWorkStop.TabIndex = 8;
@@ -129,12 +130,23 @@ namespace WorkLogTimer
             this.timerWork.Interval = 1000;
             this.timerWork.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // buttonWorkPause
+            // 
+            this.buttonWorkPause.Location = new System.Drawing.Point(97, 98);
+            this.buttonWorkPause.Name = "buttonWorkPause";
+            this.buttonWorkPause.Size = new System.Drawing.Size(75, 23);
+            this.buttonWorkPause.TabIndex = 9;
+            this.buttonWorkPause.Text = "Pause";
+            this.buttonWorkPause.UseVisualStyleBackColor = true;
+            this.buttonWorkPause.Click += new System.EventHandler(this.buttonWorkPause_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(274, 161);
+            this.Controls.Add(this.buttonWorkPause);
             this.Controls.Add(this.buttonWorkStop);
             this.Controls.Add(this.buttonWorkStart);
             this.Controls.Add(this.labelWorkCountdown);
@@ -165,6 +177,7 @@ namespace WorkLogTimer
         private System.Windows.Forms.Button buttonWorkStart;
         private System.Windows.Forms.Button buttonWorkStop;
         private System.Windows.Forms.Timer timerWork;
+        private System.Windows.Forms.Button buttonWorkPause;
     }
 }
 

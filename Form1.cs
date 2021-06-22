@@ -13,6 +13,8 @@ namespace WorkLogTimer
     public partial class Form1 : Form
     {
         private int totalSeconds;
+
+        DateTime stopTime = DateTime.Now;
         public Form1()
         {
             InitializeComponent();
@@ -20,21 +22,22 @@ namespace WorkLogTimer
         #region Add to combobox
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.buttonWorkStop.Enabled = false;
+            buttonWorkStop.Enabled = false;
+            buttonWorkPause.Enabled = false;
 
             for (int i = 0; i < 60; i++)
 
             {
 
-                this.comboBoxWorkHours.Items.Add(i.ToString());
-                this.comboBoxWorkMinutes.Items.Add(i.ToString());
-                this.comboBoxWorkSeconds.Items.Add(i.ToString());
+                comboBoxWorkHours.Items.Add(i.ToString());
+                comboBoxWorkMinutes.Items.Add(i.ToString());
+                comboBoxWorkSeconds.Items.Add(i.ToString());
 
             }
 
-            this.comboBoxWorkHours.SelectedIndex = 00;
-            this.comboBoxWorkMinutes.SelectedIndex = 00;
-            this.comboBoxWorkSeconds.SelectedIndex = 00;
+            comboBoxWorkHours.SelectedIndex = 00;
+            comboBoxWorkMinutes.SelectedIndex = 00;
+            comboBoxWorkSeconds.SelectedIndex = 00;
 
         }
         #endregion
@@ -42,32 +45,55 @@ namespace WorkLogTimer
         #region Buttons
         private void buttonWorkStart_Click(object sender, EventArgs e)
         {
-            this.buttonWorkStart.Enabled = false;
-            this.buttonWorkStop.Enabled = true;
+            buttonWorkStart.Enabled = false;
+            buttonWorkStop.Enabled = true;
+            buttonWorkPause.Enabled = true;
 
-            int hours = int.Parse(this.comboBoxWorkHours.SelectedItem.ToString());
-            int minutes = int.Parse(this.comboBoxWorkMinutes.SelectedItem.ToString());
-            int seconds = int.Parse(this.comboBoxWorkSeconds.SelectedItem.ToString());
+            int hours = int.Parse(comboBoxWorkHours.SelectedItem.ToString());
+            int minutes = int.Parse(comboBoxWorkMinutes.SelectedItem.ToString());
+            int seconds = int.Parse(comboBoxWorkSeconds.SelectedItem.ToString());
 
             totalSeconds = (minutes * 60) + (hours * 3600) + seconds;
 
-            this.timerWork.Enabled = true;
+            timerWork.Enabled = true;
         }
-        
+
+        private void buttonWorkPause_Click(object sender, EventArgs e)
+        {
+            buttonWorkPause.Enabled = true;
+            buttonWorkStart.Enabled = false;
+
+            if (buttonWorkPause.Text == "Pause")
+            {
+                timerWork.Stop();
+                buttonWorkPause.Text = "Resume";
+                stopTime = DateTime.Now;
+            }
+            else
+            {
+                buttonWorkPause.Text = "Pause";
+                
+                timerWork.Start();
+                timerWork.Enabled = true;
+            }
+        }
 
         private void buttonWorkStop_Click(object sender, EventArgs e)
         {
             totalSeconds = 0;
 
-            this.buttonWorkStop.Enabled = false;
-            this.buttonWorkStart.Enabled = true;
-            this.timerWork.Enabled = false;
+            buttonWorkStop.Enabled = false;
+            buttonWorkStart.Enabled = true;
+            timerWork.Enabled = false;
+            buttonWorkPause.Enabled = false;
 
             int hours = totalSeconds / 3600;
             int minutes = totalSeconds / 60 % 60;
             int seconds = totalSeconds % 60;
 
-            this.labelWorkCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
+            labelWorkCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
+
+            buttonWorkPause.Text = "Pause";
         }
         #endregion
 
@@ -82,28 +108,29 @@ namespace WorkLogTimer
                 int minutes = totalSeconds / 60 % 60;
                 int seconds = totalSeconds % 60;
                 
-                this.labelWorkCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
+                labelWorkCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
             }
 
             else
             {
-                this.timerWork.Stop();
+                timerWork.Stop();
 
                 System.Media.SystemSounds.Hand.Play();
 
                 MessageBox.Show("Take a break!");
 
                 Console.Beep();
+
+                buttonWorkStart.Enabled = true;
             }
         }
+
         #endregion
 
         #region Test region
 
-        public static class test
-        {
-            
-        }
         #endregion
+
+        
     }
 }
