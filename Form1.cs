@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WorkLogTimer
 {
@@ -18,6 +19,17 @@ namespace WorkLogTimer
         public Form1()
         {
             InitializeComponent();
+
+            string path = @"c:\temp\MyTest.txt";
+            if (!File.Exists(path))
+            {
+                // Create a file to write to.
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.WriteLine(labelWorkCountdown.Text);
+                }
+            }
+
         }
         #region Add to combobox
         private void Form1_Load(object sender, EventArgs e)
@@ -128,6 +140,8 @@ namespace WorkLogTimer
         #endregion
 
         #region Test region
+
+        
 
         #endregion
 
