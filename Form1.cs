@@ -19,17 +19,6 @@ namespace WorkLogTimer
         public Form1()
         {
             InitializeComponent();
-
-            string path = @"c:\temp\MyTest.txt";
-            if (!File.Exists(path))
-            {
-                // Create a file to write to.
-                using (StreamWriter sw = File.CreateText(path))
-                {
-                    sw.WriteLine(labelWorkCountdown.Text);
-                }
-            }
-
         }
         #region Add to combobox
         private void Form1_Load(object sender, EventArgs e)
@@ -37,20 +26,18 @@ namespace WorkLogTimer
             buttonWorkStop.Enabled = false;
             buttonWorkPause.Enabled = false;
 
-            for (int i = 0; i < 60; i++)
-
-            {
-
-                comboBoxWorkHours.Items.Add(i.ToString());
+            for (int i = 0; i < 61; i++)
+            {   
                 comboBoxWorkMinutes.Items.Add(i.ToString());
                 comboBoxWorkSeconds.Items.Add(i.ToString());
-
             }
-
-            comboBoxWorkHours.SelectedIndex = 00;
+            for (int i = 0; i < 5; i++)
+            {
+                comboBoxWorkHours.Items.Add(i.ToString());
+            }
+            comboBoxWorkHours.SelectedIndex = 2;
             comboBoxWorkMinutes.SelectedIndex = 00;
             comboBoxWorkSeconds.SelectedIndex = 00;
-
         }
         #endregion
 
@@ -133,18 +120,30 @@ namespace WorkLogTimer
 
                 Console.Beep();
 
+                this.Hide();
+                Form2 f2 = new Form2();
+                f2.ShowDialog();
+                this.Close();
+
                 buttonWorkStart.Enabled = true;
             }
         }
-
         #endregion
 
         #region Test region
 
-        
+
 
         #endregion
 
-        
+        #region Navigation
+        private void breakTimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+            this.Close();
+        }
+        #endregion
     }
 }
