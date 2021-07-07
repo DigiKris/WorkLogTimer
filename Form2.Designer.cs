@@ -29,6 +29,7 @@ namespace WorkLogTimer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.buttonBreakPause = new System.Windows.Forms.Button();
             this.buttonBreakStop = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@ namespace WorkLogTimer
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.breakTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerBreak = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +57,7 @@ namespace WorkLogTimer
             this.buttonBreakPause.TabIndex = 29;
             this.buttonBreakPause.Text = "Pause";
             this.buttonBreakPause.UseVisualStyleBackColor = true;
+            this.buttonBreakPause.Click += new System.EventHandler(this.buttonBreakPause_Click);
             // 
             // buttonBreakStop
             // 
@@ -64,6 +67,7 @@ namespace WorkLogTimer
             this.buttonBreakStop.TabIndex = 28;
             this.buttonBreakStop.Text = "Stop";
             this.buttonBreakStop.UseVisualStyleBackColor = true;
+            this.buttonBreakStop.Click += new System.EventHandler(this.buttonBreakStop_Click);
             // 
             // buttonBreakStart
             // 
@@ -73,6 +77,7 @@ namespace WorkLogTimer
             this.buttonBreakStart.TabIndex = 27;
             this.buttonBreakStart.Text = "Start break";
             this.buttonBreakStart.UseVisualStyleBackColor = true;
+            this.buttonBreakStart.Click += new System.EventHandler(this.buttonBreakStart_Click);
             // 
             // labelBreakCountdown
             // 
@@ -167,6 +172,11 @@ namespace WorkLogTimer
             this.workTimerToolStripMenuItem.Text = "Work Timer";
             this.workTimerToolStripMenuItem.Click += new System.EventHandler(this.workTimerToolStripMenuItem_Click);
             // 
+            // timerBreak
+            // 
+            this.timerBreak.Interval = 1000;
+            this.timerBreak.Tick += new System.EventHandler(this.timerBreak_Tick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -211,5 +221,6 @@ namespace WorkLogTimer
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem breakTimerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem workTimerToolStripMenuItem;
+        private System.Windows.Forms.Timer timerBreak;
     }
 }
