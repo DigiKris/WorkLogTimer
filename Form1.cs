@@ -56,7 +56,6 @@ namespace WorkLogTimer
 
             timerWork.Enabled = true;
         }
-
         private void buttonWorkPause_Click(object sender, EventArgs e)
         {
             buttonWorkPause.Enabled = true;
@@ -76,7 +75,6 @@ namespace WorkLogTimer
                 timerWork.Enabled = true;
             }
         }
-
         private void buttonWorkStop_Click(object sender, EventArgs e)
         {
             totalSeconds = 0;
@@ -115,8 +113,15 @@ namespace WorkLogTimer
                 timerWork.Stop();
 
                 System.Media.SystemSounds.Hand.Play();
-
-                MessageBox.Show("Take a break!");
+                
+                var randomMessage = new Random();
+                var messageList = new List<string> {"Take a break!", "Meditate", "Relax!", "Get some fresh air.", 
+                    "Nature does not hurry, yet everything is accomplished.", "Empty your mind.", "Relax! Life is bautiful!", "Go for a walk!", 
+                "Time out!", "Time for a break!", "Either move or be moved."};
+                int index = randomMessage.Next(messageList.Count);
+                
+                string messageBoxTitle = "WorkLogTimer";
+                MessageBox.Show(messageList[index], messageBoxTitle);
 
                 Console.Beep();
 
@@ -130,12 +135,6 @@ namespace WorkLogTimer
         }
         #endregion
 
-        #region Test region
-
-
-
-        #endregion
-
         #region Navigation
         private void breakTimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -143,6 +142,15 @@ namespace WorkLogTimer
             Form2 f2 = new Form2();
             f2.ShowDialog();
             this.Close();
+        }
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAboutMessageBox f3 = new FormAboutMessageBox();
+            f3.ShowDialog();
+
+            /*string messageBoxTitle = "WorkLogTimer About";
+            string messageBoxMessage = " Digitalents Helsinki \n\r WorkLogTimer by DigiKris";
+            MessageBox.Show(messageBoxMessage, messageBoxTitle);*/
         }
         #endregion
     }

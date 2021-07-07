@@ -47,6 +47,7 @@ namespace WorkLogTimer
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.breakTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,7 +155,8 @@ namespace WorkLogTimer
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewToolStripMenuItem});
+            this.viewToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(274, 24);
@@ -183,6 +185,13 @@ namespace WorkLogTimer
             this.workTimerToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.workTimerToolStripMenuItem.Text = "Work Timer";
             // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -200,8 +209,10 @@ namespace WorkLogTimer
             this.Controls.Add(this.labelWorkMinutes);
             this.Controls.Add(this.comboBoxWorkHours);
             this.Controls.Add(this.labelWorkHours);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "WorkLogTimer";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -230,6 +241,7 @@ namespace WorkLogTimer
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem breakTimerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem workTimerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

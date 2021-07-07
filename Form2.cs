@@ -115,7 +115,15 @@ namespace WorkLogTimer
 
                 System.Media.SystemSounds.Hand.Play();
 
-                MessageBox.Show("Time for work!");
+                var randomMessage = new Random();
+                var messageList = new List<string> {"It always seems impossible until it is done.", "If you can dream it, you can do it.", 
+                "Problems are not stop signs, they are guidelines.", "In order to succeed, we must first believe that we can.", 
+                "The sercret of getting ahead is getting started.", "Either find a way, or make one.", "Act as if what you do makes a difference. It does.", 
+                "Step by step and the thing is done.", "A will finds a way!", "There is a way to do it better, find it."};
+                int index = randomMessage.Next(messageList.Count);
+
+                string messageBoxTitle = "WorkLogTimer";
+                MessageBox.Show(messageList[index], messageBoxTitle);
 
                 Console.Beep();
 
@@ -137,6 +145,11 @@ namespace WorkLogTimer
             f1.ShowDialog();
             this.Close();
         }
-        #endregion    
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAboutMessageBox f3 = new FormAboutMessageBox();
+            f3.ShowDialog();
+        }
+        #endregion
     }
 }

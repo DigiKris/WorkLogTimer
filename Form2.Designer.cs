@@ -45,6 +45,7 @@ namespace WorkLogTimer
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.breakTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerBreak = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -143,7 +144,8 @@ namespace WorkLogTimer
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewToolStripMenuItem});
+            this.viewToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(274, 24);
@@ -172,6 +174,13 @@ namespace WorkLogTimer
             this.workTimerToolStripMenuItem.Text = "Work Timer";
             this.workTimerToolStripMenuItem.Click += new System.EventHandler(this.workTimerToolStripMenuItem_Click);
             // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // timerBreak
             // 
             this.timerBreak.Interval = 1000;
@@ -194,7 +203,9 @@ namespace WorkLogTimer
             this.Controls.Add(this.labelBreakMinutes);
             this.Controls.Add(this.comboBoxBreakHours);
             this.Controls.Add(this.labelBreakHours);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "WorkLogTimer";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -222,5 +233,6 @@ namespace WorkLogTimer
         private System.Windows.Forms.ToolStripMenuItem breakTimerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem workTimerToolStripMenuItem;
         private System.Windows.Forms.Timer timerBreak;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
