@@ -116,12 +116,12 @@ namespace WorkLogTimer
                 
                 var randomMessage = new Random();
                 var messageList = new List<string> {"Take a break!", "Meditate", "Relax!", "Get some fresh air.", 
-                    "Nature does not hurry, yet everything is accomplished.", "Empty your mind.", "Relax! Life is bautiful!", "Go for a walk!", 
+                    "Nature does not hurry, yet everything is accomplished.", "Empty your mind.", "Relax! Life is beautiful!", "Go for a walk!", 
                 "Time out!", "Time for a break!", "Either move or be moved."};
                 int index = randomMessage.Next(messageList.Count);
                 
                 string messageBoxTitle = "WorkLogTimer";
-                MessageBox.Show(messageList[index], messageBoxTitle);
+                MessageBox.Show(messageList[index], messageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                 Console.Beep();
 
@@ -138,10 +138,28 @@ namespace WorkLogTimer
         #region Navigation
         private void breakTimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 f2 = new Form2();
-            f2.ShowDialog();
-            this.Close();
+            if (timerWork.Enabled == true)
+            {
+                //https://www.c-sharpcorner.com/uploadfile/mahesh/understanding-message-box-in-windows-forms-using-C-Sharp/
+                string messageBoxTitle = "WorkLogTimer";
+                string messageBoxMessage = "Countdown is running, are you sure you wish to navigate ?";
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                DialogResult result = MessageBox.Show(messageBoxMessage, messageBoxTitle, buttons, MessageBoxIcon.Warning);
+                if (result == DialogResult.OK)
+                {
+                    this.Hide();
+                    Form2 f2 = new Form2();
+                    f2.ShowDialog();
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Hide();
+                Form2 f2 = new Form2();
+                f2.ShowDialog();
+                this.Close();
+            } 
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {

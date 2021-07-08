@@ -46,13 +46,16 @@ namespace WorkLogTimer
             this.breakTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerBreak = new System.Windows.Forms.Timer(this.components);
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonBreakPause
             // 
-            this.buttonBreakPause.Location = new System.Drawing.Point(98, 120);
+            this.buttonBreakPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBreakPause.Location = new System.Drawing.Point(98, 128);
             this.buttonBreakPause.Name = "buttonBreakPause";
             this.buttonBreakPause.Size = new System.Drawing.Size(75, 23);
             this.buttonBreakPause.TabIndex = 29;
@@ -62,7 +65,8 @@ namespace WorkLogTimer
             // 
             // buttonBreakStop
             // 
-            this.buttonBreakStop.Location = new System.Drawing.Point(178, 119);
+            this.buttonBreakStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBreakStop.Location = new System.Drawing.Point(178, 128);
             this.buttonBreakStop.Name = "buttonBreakStop";
             this.buttonBreakStop.Size = new System.Drawing.Size(75, 23);
             this.buttonBreakStop.TabIndex = 28;
@@ -72,7 +76,8 @@ namespace WorkLogTimer
             // 
             // buttonBreakStart
             // 
-            this.buttonBreakStart.Location = new System.Drawing.Point(18, 120);
+            this.buttonBreakStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBreakStart.Location = new System.Drawing.Point(18, 128);
             this.buttonBreakStart.Name = "buttonBreakStart";
             this.buttonBreakStart.Size = new System.Drawing.Size(75, 23);
             this.buttonBreakStart.TabIndex = 27;
@@ -83,68 +88,72 @@ namespace WorkLogTimer
             // labelBreakCountdown
             // 
             this.labelBreakCountdown.AutoSize = true;
+            this.labelBreakCountdown.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelBreakCountdown.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelBreakCountdown.Location = new System.Drawing.Point(78, 80);
             this.labelBreakCountdown.Name = "labelBreakCountdown";
-            this.labelBreakCountdown.Size = new System.Drawing.Size(119, 37);
+            this.labelBreakCountdown.Size = new System.Drawing.Size(121, 39);
             this.labelBreakCountdown.TabIndex = 26;
             this.labelBreakCountdown.Text = "00:00:00";
             // 
             // labelBreakSeconds
             // 
             this.labelBreakSeconds.AutoSize = true;
-            this.labelBreakSeconds.Location = new System.Drawing.Point(175, 35);
+            this.labelBreakSeconds.Location = new System.Drawing.Point(212, 32);
             this.labelBreakSeconds.Name = "labelBreakSeconds";
-            this.labelBreakSeconds.Size = new System.Drawing.Size(82, 15);
+            this.labelBreakSeconds.Size = new System.Drawing.Size(13, 15);
             this.labelBreakSeconds.TabIndex = 25;
-            this.labelBreakSeconds.Text = "Break seconds";
+            this.labelBreakSeconds.Text = "S";
             // 
             // comboBoxBreakSeconds
             // 
             this.comboBoxBreakSeconds.FormattingEnabled = true;
-            this.comboBoxBreakSeconds.Location = new System.Drawing.Point(192, 53);
+            this.comboBoxBreakSeconds.Location = new System.Drawing.Point(202, 50);
             this.comboBoxBreakSeconds.Name = "comboBoxBreakSeconds";
-            this.comboBoxBreakSeconds.Size = new System.Drawing.Size(40, 23);
+            this.comboBoxBreakSeconds.Size = new System.Drawing.Size(35, 23);
             this.comboBoxBreakSeconds.TabIndex = 24;
             // 
             // comboBoxBreakMinutes
             // 
             this.comboBoxBreakMinutes.FormattingEnabled = true;
-            this.comboBoxBreakMinutes.Location = new System.Drawing.Point(109, 54);
+            this.comboBoxBreakMinutes.Location = new System.Drawing.Point(119, 51);
             this.comboBoxBreakMinutes.Name = "comboBoxBreakMinutes";
-            this.comboBoxBreakMinutes.Size = new System.Drawing.Size(40, 23);
+            this.comboBoxBreakMinutes.Size = new System.Drawing.Size(35, 23);
             this.comboBoxBreakMinutes.TabIndex = 23;
             // 
             // labelBreakMinutes
             // 
             this.labelBreakMinutes.AutoSize = true;
-            this.labelBreakMinutes.Location = new System.Drawing.Point(88, 35);
+            this.labelBreakMinutes.Location = new System.Drawing.Point(127, 32);
             this.labelBreakMinutes.Name = "labelBreakMinutes";
-            this.labelBreakMinutes.Size = new System.Drawing.Size(82, 15);
+            this.labelBreakMinutes.Size = new System.Drawing.Size(18, 15);
             this.labelBreakMinutes.TabIndex = 22;
-            this.labelBreakMinutes.Text = "Break minutes";
+            this.labelBreakMinutes.Text = "M";
             // 
             // comboBoxBreakHours
             // 
             this.comboBoxBreakHours.FormattingEnabled = true;
-            this.comboBoxBreakHours.Location = new System.Drawing.Point(27, 53);
+            this.comboBoxBreakHours.Location = new System.Drawing.Point(37, 50);
             this.comboBoxBreakHours.Name = "comboBoxBreakHours";
-            this.comboBoxBreakHours.Size = new System.Drawing.Size(39, 23);
+            this.comboBoxBreakHours.Size = new System.Drawing.Size(35, 23);
             this.comboBoxBreakHours.TabIndex = 21;
             // 
             // labelBreakHours
             // 
             this.labelBreakHours.AutoSize = true;
-            this.labelBreakHours.Location = new System.Drawing.Point(14, 35);
+            this.labelBreakHours.Location = new System.Drawing.Point(47, 32);
             this.labelBreakHours.Name = "labelBreakHours";
-            this.labelBreakHours.Size = new System.Drawing.Size(69, 15);
+            this.labelBreakHours.Size = new System.Drawing.Size(16, 15);
             this.labelBreakHours.TabIndex = 20;
-            this.labelBreakHours.Text = "Break hours";
+            this.labelBreakHours.Text = "H";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Black;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
             this.viewToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -157,18 +166,21 @@ namespace WorkLogTimer
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.breakTimerToolStripMenuItem,
             this.workTimerToolStripMenuItem});
+            this.viewToolStripMenuItem.ForeColor = System.Drawing.Color.DarkOrange;
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // breakTimerToolStripMenuItem
             // 
+            this.breakTimerToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.breakTimerToolStripMenuItem.Name = "breakTimerToolStripMenuItem";
             this.breakTimerToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.breakTimerToolStripMenuItem.Text = "Break Timer";
             // 
             // workTimerToolStripMenuItem
             // 
+            this.workTimerToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.workTimerToolStripMenuItem.Name = "workTimerToolStripMenuItem";
             this.workTimerToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.workTimerToolStripMenuItem.Text = "Work Timer";
@@ -176,21 +188,37 @@ namespace WorkLogTimer
             // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.DarkOrange;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.DarkOrange;
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // timerBreak
             // 
             this.timerBreak.Interval = 1000;
             this.timerBreak.Tick += new System.EventHandler(this.timerBreak_Tick);
             // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.DarkOrange;
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackgroundImage = global::WorkLogTimer.Properties.Resources.digitalents_logo_plain_copy;
             this.ClientSize = new System.Drawing.Size(274, 162);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.buttonBreakPause);
@@ -207,7 +235,7 @@ namespace WorkLogTimer
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form2";
-            this.Text = "WorkLogTimer";
+            this.Text = "WorkLogTimer Break";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -234,5 +262,7 @@ namespace WorkLogTimer
         private System.Windows.Forms.ToolStripMenuItem workTimerToolStripMenuItem;
         private System.Windows.Forms.Timer timerBreak;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
     }
 }

@@ -140,10 +140,28 @@ namespace WorkLogTimer
         #region Navigation
         private void workTimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 f1 = new Form1();
-            f1.ShowDialog();
-            this.Close();
+            if (timerBreak.Enabled == true)
+            {
+                //https://www.c-sharpcorner.com/uploadfile/mahesh/understanding-message-box-in-windows-forms-using-C-Sharp/
+                string messageBoxTitle = "WorkLogTimer";
+                string messageBoxMessage = "Countdown is running, are you sure you wish to navigate ?";
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                DialogResult result = MessageBox.Show(messageBoxMessage, messageBoxTitle, buttons, MessageBoxIcon.Warning);
+                if (result == DialogResult.OK)
+                {
+                    this.Hide();
+                    Form1 f1 = new Form1();
+                    f1.ShowDialog();
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Hide();
+                Form1 f1 = new Form1();
+                f1.ShowDialog();
+                this.Close();
+            }
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
