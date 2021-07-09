@@ -11,12 +11,16 @@ using System.IO;
 
 namespace WorkLogTimer
 {
-    public partial class Form1 : Form
+    public partial class FormWork : Form
     {
         private int totalSeconds;
 
         DateTime stopTime = DateTime.Now;
-        public Form1()
+
+        //For writefile
+        FileInfo logFile = new FileInfo("WorkLogTimerLogFile.txt");
+        DateTime localDate = DateTime.Now;
+        public FormWork()
         {
             InitializeComponent();
         }
@@ -55,6 +59,22 @@ namespace WorkLogTimer
             totalSeconds = (minutes * 60) + (hours * 3600) + seconds;
 
             timerWork.Enabled = true;
+
+            /*// This text is added only once to the file.
+            if (!logFile.Exists)
+            {
+                //Create a file to write to.
+                using (StreamWriter sw = logFile.CreateText())
+                {
+                }
+            }*/
+
+            // This text will always be added, making the file longer over time
+            // if it is not deleted.
+            using (StreamWriter sw = logFile.AppendText())
+            {
+                sw.WriteLine("Work: " + hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0')+ " " + localDate);
+            }
         }
         private void buttonWorkPause_Click(object sender, EventArgs e)
         {
@@ -120,13 +140,13 @@ namespace WorkLogTimer
                 "Time out!", "Time for a break!", "Either move or be moved."};
                 int index = randomMessage.Next(messageList.Count);
                 
-                string messageBoxTitle = "WorkLogTimer";
+                string messageBoxTitle = "WorkLogTimer Time's up!";
                 MessageBox.Show(messageList[index], messageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                 Console.Beep();
 
                 this.Hide();
-                Form2 f2 = new Form2();
+                FormBreak f2 = new FormBreak();
                 f2.ShowDialog();
                 this.Close();
 
@@ -148,7 +168,7 @@ namespace WorkLogTimer
                 if (result == DialogResult.OK)
                 {
                     this.Hide();
-                    Form2 f2 = new Form2();
+                    FormBreak f2 = new FormBreak();
                     f2.ShowDialog();
                     this.Close();
                 }
@@ -156,7 +176,7 @@ namespace WorkLogTimer
             else
             {
                 this.Hide();
-                Form2 f2 = new Form2();
+                FormBreak f2 = new FormBreak();
                 f2.ShowDialog();
                 this.Close();
             } 
@@ -169,6 +189,11 @@ namespace WorkLogTimer
             /*string messageBoxTitle = "WorkLogTimer About";
             string messageBoxMessage = " Digitalents Helsinki \n\r WorkLogTimer by DigiKris";
             MessageBox.Show(messageBoxMessage, messageBoxTitle);*/
+        }
+        private void logToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLogWindow f4 = new FormLogWindow();
+            f4.ShowDialog();
         }
         #endregion
     }

@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace WorkLogTimer
 {
-    public partial class Form2 : Form
+    public partial class FormBreak : Form
     {
         private int totalSeconds;
 
         DateTime stopTime = DateTime.Now;
-        public Form2()
+        public FormBreak()
         {
             InitializeComponent();
         }
@@ -122,13 +122,13 @@ namespace WorkLogTimer
                 "Step by step and the thing is done.", "A will finds a way!", "There is a way to do it better, find it."};
                 int index = randomMessage.Next(messageList.Count);
 
-                string messageBoxTitle = "WorkLogTimer";
-                MessageBox.Show(messageList[index], messageBoxTitle);
+                string messageBoxTitle = "WorkLogTimer Time's up!";
+                MessageBox.Show(messageList[index], messageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                 Console.Beep();
 
                 this.Hide();
-                Form1 f1 = new Form1();
+                FormWork f1 = new FormWork();
                 f1.ShowDialog();
                 this.Close();
 
@@ -150,7 +150,7 @@ namespace WorkLogTimer
                 if (result == DialogResult.OK)
                 {
                     this.Hide();
-                    Form1 f1 = new Form1();
+                    FormWork f1 = new FormWork();
                     f1.ShowDialog();
                     this.Close();
                 }
@@ -158,7 +158,7 @@ namespace WorkLogTimer
             else
             {
                 this.Hide();
-                Form1 f1 = new Form1();
+                FormWork f1 = new FormWork();
                 f1.ShowDialog();
                 this.Close();
             }

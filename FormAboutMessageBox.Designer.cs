@@ -49,7 +49,7 @@ namespace WorkLogTimer
             // 
             // labellabelWorkLogTimerby
             // 
-            this.labellabelWorkLogTimerby.Location = new System.Drawing.Point(45, 29);
+            this.labellabelWorkLogTimerby.Location = new System.Drawing.Point(47, 29);
             this.labellabelWorkLogTimerby.Name = "labellabelWorkLogTimerby";
             this.labellabelWorkLogTimerby.Size = new System.Drawing.Size(105, 23);
             this.labellabelWorkLogTimerby.TabIndex = 1;
@@ -58,7 +58,7 @@ namespace WorkLogTimer
             // 
             // linkLabelDigiKris
             // 
-            this.linkLabelDigiKris.Location = new System.Drawing.Point(146, 33);
+            this.linkLabelDigiKris.Location = new System.Drawing.Point(148, 33);
             this.linkLabelDigiKris.Name = "linkLabelDigiKris";
             this.linkLabelDigiKris.Size = new System.Drawing.Size(51, 23);
             this.linkLabelDigiKris.TabIndex = 2;
@@ -91,6 +91,7 @@ namespace WorkLogTimer
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormAboutMessageBox";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "WorkLogTimer About";
             this.ResumeLayout(false);
 
