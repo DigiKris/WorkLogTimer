@@ -44,7 +44,6 @@ namespace WorkLogTimer
             this.buttonWorkPause = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.breakTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +56,7 @@ namespace WorkLogTimer
             // labelWorkHours
             // 
             this.labelWorkHours.AutoSize = true;
-            this.labelWorkHours.Location = new System.Drawing.Point(47, 32);
+            this.labelWorkHours.Location = new System.Drawing.Point(52, 32);
             this.labelWorkHours.Name = "labelWorkHours";
             this.labelWorkHours.Size = new System.Drawing.Size(16, 15);
             this.labelWorkHours.TabIndex = 0;
@@ -68,7 +67,7 @@ namespace WorkLogTimer
             this.comboBoxWorkHours.BackColor = System.Drawing.SystemColors.Window;
             this.comboBoxWorkHours.DropDownWidth = 35;
             this.comboBoxWorkHours.FormattingEnabled = true;
-            this.comboBoxWorkHours.Location = new System.Drawing.Point(37, 50);
+            this.comboBoxWorkHours.Location = new System.Drawing.Point(42, 50);
             this.comboBoxWorkHours.Name = "comboBoxWorkHours";
             this.comboBoxWorkHours.Size = new System.Drawing.Size(35, 23);
             this.comboBoxWorkHours.TabIndex = 1;
@@ -79,7 +78,7 @@ namespace WorkLogTimer
             this.labelWorkMinutes.BackColor = System.Drawing.Color.LightGray;
             this.labelWorkMinutes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelWorkMinutes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelWorkMinutes.Location = new System.Drawing.Point(128, 32);
+            this.labelWorkMinutes.Location = new System.Drawing.Point(133, 32);
             this.labelWorkMinutes.Name = "labelWorkMinutes";
             this.labelWorkMinutes.Size = new System.Drawing.Size(18, 15);
             this.labelWorkMinutes.TabIndex = 2;
@@ -89,7 +88,7 @@ namespace WorkLogTimer
             // 
             this.comboBoxWorkMinutes.DropDownWidth = 35;
             this.comboBoxWorkMinutes.FormattingEnabled = true;
-            this.comboBoxWorkMinutes.Location = new System.Drawing.Point(119, 51);
+            this.comboBoxWorkMinutes.Location = new System.Drawing.Point(124, 51);
             this.comboBoxWorkMinutes.Name = "comboBoxWorkMinutes";
             this.comboBoxWorkMinutes.Size = new System.Drawing.Size(35, 23);
             this.comboBoxWorkMinutes.TabIndex = 3;
@@ -98,7 +97,7 @@ namespace WorkLogTimer
             // 
             this.comboBoxWorkSeconds.DropDownWidth = 35;
             this.comboBoxWorkSeconds.FormattingEnabled = true;
-            this.comboBoxWorkSeconds.Location = new System.Drawing.Point(202, 50);
+            this.comboBoxWorkSeconds.Location = new System.Drawing.Point(207, 50);
             this.comboBoxWorkSeconds.Name = "comboBoxWorkSeconds";
             this.comboBoxWorkSeconds.Size = new System.Drawing.Size(35, 23);
             this.comboBoxWorkSeconds.TabIndex = 4;
@@ -106,7 +105,7 @@ namespace WorkLogTimer
             // labelWorkSeconds
             // 
             this.labelWorkSeconds.AutoSize = true;
-            this.labelWorkSeconds.Location = new System.Drawing.Point(212, 32);
+            this.labelWorkSeconds.Location = new System.Drawing.Point(217, 32);
             this.labelWorkSeconds.Name = "labelWorkSeconds";
             this.labelWorkSeconds.Size = new System.Drawing.Size(13, 15);
             this.labelWorkSeconds.TabIndex = 5;
@@ -117,7 +116,7 @@ namespace WorkLogTimer
             this.labelWorkCountdown.AutoSize = true;
             this.labelWorkCountdown.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelWorkCountdown.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelWorkCountdown.Location = new System.Drawing.Point(77, 80);
+            this.labelWorkCountdown.Location = new System.Drawing.Point(82, 81);
             this.labelWorkCountdown.Name = "labelWorkCountdown";
             this.labelWorkCountdown.Size = new System.Drawing.Size(121, 39);
             this.labelWorkCountdown.TabIndex = 6;
@@ -126,7 +125,7 @@ namespace WorkLogTimer
             // buttonWorkStart
             // 
             this.buttonWorkStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonWorkStart.Location = new System.Drawing.Point(19, 129);
+            this.buttonWorkStart.Location = new System.Drawing.Point(24, 129);
             this.buttonWorkStart.Name = "buttonWorkStart";
             this.buttonWorkStart.Size = new System.Drawing.Size(75, 23);
             this.buttonWorkStart.TabIndex = 7;
@@ -137,7 +136,7 @@ namespace WorkLogTimer
             // buttonWorkStop
             // 
             this.buttonWorkStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonWorkStop.Location = new System.Drawing.Point(179, 129);
+            this.buttonWorkStop.Location = new System.Drawing.Point(184, 129);
             this.buttonWorkStop.Name = "buttonWorkStop";
             this.buttonWorkStop.Size = new System.Drawing.Size(75, 23);
             this.buttonWorkStop.TabIndex = 8;
@@ -153,7 +152,7 @@ namespace WorkLogTimer
             // buttonWorkPause
             // 
             this.buttonWorkPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonWorkPause.Location = new System.Drawing.Point(99, 129);
+            this.buttonWorkPause.Location = new System.Drawing.Point(104, 129);
             this.buttonWorkPause.Name = "buttonWorkPause";
             this.buttonWorkPause.Size = new System.Drawing.Size(75, 23);
             this.buttonWorkPause.TabIndex = 9;
@@ -170,22 +169,14 @@ namespace WorkLogTimer
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Black;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
             this.viewToolStripMenuItem,
             this.settingsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(274, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(279, 24);
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.DarkOrange;
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
             // 
             // viewToolStripMenuItem
             // 
@@ -224,6 +215,7 @@ namespace WorkLogTimer
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -240,7 +232,7 @@ namespace WorkLogTimer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.BackgroundImage = global::WorkLogTimer.Properties.Resources.digitalents_logo_plain_copy;
-            this.ClientSize = new System.Drawing.Size(274, 162);
+            this.ClientSize = new System.Drawing.Size(279, 162);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.buttonWorkPause);
             this.Controls.Add(this.buttonWorkStop);
@@ -288,7 +280,6 @@ namespace WorkLogTimer
         private System.Windows.Forms.ToolStripMenuItem workTimerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
     }
 }

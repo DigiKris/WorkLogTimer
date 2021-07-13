@@ -1,7 +1,7 @@
 ﻿
 namespace WorkLogTimer
 {
-    partial class FormLogWindow
+    partial class FormSettings
     {
         /// <summary>
         /// Required designer variable.
@@ -29,38 +29,42 @@ namespace WorkLogTimer
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogWindow));
-            this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettings));
+            this.checkBoxStartWithWindows = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // richTextBoxLog
+            // checkBoxStartWithWindows
             // 
-            this.richTextBoxLog.Location = new System.Drawing.Point(12, 12);
-            this.richTextBoxLog.Name = "richTextBoxLog";
-            this.richTextBoxLog.ReadOnly = true;
-            this.richTextBoxLog.Size = new System.Drawing.Size(345, 237);
-            this.richTextBoxLog.TabIndex = 0;
-            this.richTextBoxLog.Text = "";
+            this.checkBoxStartWithWindows.AutoSize = true;
+            this.checkBoxStartWithWindows.Location = new System.Drawing.Point(81, 66);
+            this.checkBoxStartWithWindows.Name = "checkBoxStartWithWindows";
+            this.checkBoxStartWithWindows.Size = new System.Drawing.Size(128, 19);
+            this.checkBoxStartWithWindows.TabIndex = 0;
+            this.checkBoxStartWithWindows.Text = "Start with Windows";
+            this.checkBoxStartWithWindows.UseVisualStyleBackColor = true;
+            this.checkBoxStartWithWindows.CheckedChanged += new System.EventHandler(this.checkBoxStartWithWindows_CheckedChanged);
             // 
-            // FormLogWindow
+            // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 262);
-            this.Controls.Add(this.richTextBoxLog);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(293, 162);
+            this.Controls.Add(this.checkBoxStartWithWindows);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormLogWindow";
+            this.Name = "FormSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "WorkLogTimer Log";
+            this.Text = "WorkLogTimer Settings";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBoxLog;
+        private System.Windows.Forms.CheckBox checkBoxStartWithWindows;
     }
 }

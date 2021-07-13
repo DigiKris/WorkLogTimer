@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WorkLogTimer
 {
@@ -15,6 +16,13 @@ namespace WorkLogTimer
         private int totalSeconds;
 
         DateTime stopTime = DateTime.Now;
+
+        //For writefile
+        FileInfo logFile = new FileInfo("WorkLogTimerLogFile.txt");
+
+        //For logfile timespan between button clicks
+        private DateTime buttonStartClick;
+        private DateTime buttonStopClick;
         public FormBreak()
         {
             InitializeComponent();
@@ -54,6 +62,16 @@ namespace WorkLogTimer
             totalSeconds = (minutes * 60) + (hours * 3600) + seconds;
 
             timerBreak.Enabled = true;
+
+            //For file writing
+            buttonStartClick = DateTime.Now;
+            labelBreakCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
+            DateTime startTime = DateTime.Now;
+            using (StreamWriter sw = logFile.AppendText())
+            {
+
+                sw.WriteLine("Break: " + startTime + " " + labelBreakCountdown.Text);
+            }
         }
 
         private void buttonBreakPause_Click(object sender, EventArgs e)
@@ -74,6 +92,13 @@ namespace WorkLogTimer
                 timerBreak.Start();
                 timerBreak.Enabled = true;
             }
+
+            //For file writing
+            DateTime pauseResumeTime = DateTime.Now;
+            using (StreamWriter sw = logFile.AppendText())
+            {
+                sw.WriteLine("Break pause/resume: " + pauseResumeTime);
+            }
         }
 
         private void buttonBreakStop_Click(object sender, EventArgs e)
@@ -92,6 +117,16 @@ namespace WorkLogTimer
             labelBreakCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
 
             buttonBreakPause.Text = "Pause";
+
+            //For writefile
+            buttonStopClick = DateTime.Now;
+            TimeSpan timespan = buttonStopClick - buttonStartClick;
+            DateTime stopTime = DateTime.Now;
+            using (StreamWriter sw = logFile.AppendText())
+            {
+
+                sw.WriteLine("Break stop: " + stopTime + " " + "Break time: " + timespan);
+            }
         }
         #endregion
 
@@ -167,6 +202,16 @@ namespace WorkLogTimer
         {
             FormAboutMessageBox f3 = new FormAboutMessageBox();
             f3.ShowDialog();
+        }
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSettings f5 = new FormSettings();
+            f5.ShowDialog();
+        }
+        private void logToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLogWindow f4 = new FormLogWindow();
+            f4.ShowDialog();
         }
         #endregion
     }

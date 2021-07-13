@@ -30,35 +30,24 @@ namespace WorkLogTimer
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAboutMessageBox));
-            this.labelDigitalentsHelsinki = new System.Windows.Forms.Label();
             this.labellabelWorkLogTimerby = new System.Windows.Forms.Label();
             this.linkLabelDigiKris = new System.Windows.Forms.LinkLabel();
             this.labelVersion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // labelDigitalentsHelsinki
-            // 
-            this.labelDigitalentsHelsinki.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelDigitalentsHelsinki.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelDigitalentsHelsinki.Location = new System.Drawing.Point(0, 14);
-            this.labelDigitalentsHelsinki.Name = "labelDigitalentsHelsinki";
-            this.labelDigitalentsHelsinki.Size = new System.Drawing.Size(247, 15);
-            this.labelDigitalentsHelsinki.TabIndex = 0;
-            this.labelDigitalentsHelsinki.Text = "Digitalents Helsinki";
-            this.labelDigitalentsHelsinki.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // labellabelWorkLogTimerby
             // 
-            this.labellabelWorkLogTimerby.Location = new System.Drawing.Point(47, 29);
+            this.labellabelWorkLogTimerby.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labellabelWorkLogTimerby.Location = new System.Drawing.Point(41, 22);
             this.labellabelWorkLogTimerby.Name = "labellabelWorkLogTimerby";
-            this.labellabelWorkLogTimerby.Size = new System.Drawing.Size(105, 23);
+            this.labellabelWorkLogTimerby.Size = new System.Drawing.Size(114, 23);
             this.labellabelWorkLogTimerby.TabIndex = 1;
             this.labellabelWorkLogTimerby.Text = "WorkLogTimer by";
             this.labellabelWorkLogTimerby.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linkLabelDigiKris
             // 
-            this.linkLabelDigiKris.Location = new System.Drawing.Point(148, 33);
+            this.linkLabelDigiKris.Location = new System.Drawing.Point(150, 26);
             this.linkLabelDigiKris.Name = "linkLabelDigiKris";
             this.linkLabelDigiKris.Size = new System.Drawing.Size(51, 23);
             this.linkLabelDigiKris.TabIndex = 2;
@@ -69,7 +58,7 @@ namespace WorkLogTimer
             // labelVersion
             // 
             this.labelVersion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelVersion.Location = new System.Drawing.Point(0, 52);
+            this.labelVersion.Location = new System.Drawing.Point(2, 45);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(247, 23);
             this.labelVersion.TabIndex = 3;
@@ -85,7 +74,6 @@ namespace WorkLogTimer
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.linkLabelDigiKris);
             this.Controls.Add(this.labellabelWorkLogTimerby);
-            this.Controls.Add(this.labelDigitalentsHelsinki);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -98,8 +86,6 @@ namespace WorkLogTimer
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelDigitalentsHelsinki;
         private System.Windows.Forms.Label labellabelWorkLogTimerby;
         private System.Windows.Forms.LinkLabel linkLabelDigiKris;
         private System.Windows.Forms.Label labelVersion;
