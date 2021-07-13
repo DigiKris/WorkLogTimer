@@ -17,6 +17,7 @@ namespace WorkLogTimer
         {
             InitializeComponent();
         }
+        //Start with windows
         private void checkBoxStartWithWindows_CheckedChanged(object sender, EventArgs e)
         {
             RegistryKey rk = Registry.CurrentUser.OpenSubKey
