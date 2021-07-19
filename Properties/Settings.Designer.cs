@@ -34,5 +34,17 @@ namespace WorkLogTimer.Properties {
                 this["SettingMinimizeTotray"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SettingStartWithWindows {
+            get {
+                return ((bool)(this["SettingStartWithWindows"]));
+            }
+            set {
+                this["SettingStartWithWindows"] = value;
+            }
+        }
     }
 }

@@ -38,11 +38,13 @@ namespace WorkLogTimer
 
         private void FormSettings_Load(object sender, EventArgs e)
         {
+            checkBoxStartWithWindows.Checked = Properties.Settings.Default.SettingStartWithWindows;
             checkBoxMinimizeToTray.Checked = Properties.Settings.Default.SettingMinimizeTotray;
         }
 
         private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Properties.Settings.Default.SettingStartWithWindows = checkBoxStartWithWindows.Checked;
             Properties.Settings.Default.SettingMinimizeTotray = checkBoxMinimizeToTray.Checked;
             Properties.Settings.Default.Save();
         }
