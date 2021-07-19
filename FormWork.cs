@@ -159,10 +159,11 @@ namespace WorkLogTimer
 
                 Console.Beep();
 
-                this.Hide();
+                notifyIconWork.Visible = false;
+
+                Hide();
                 FormBreak f2 = new FormBreak();
                 f2.ShowDialog();
-                this.Close();
 
                 buttonWorkStart.Enabled = true;
             }
@@ -181,18 +182,16 @@ namespace WorkLogTimer
                 DialogResult result = MessageBox.Show(messageBoxMessage, messageBoxTitle, buttons, MessageBoxIcon.Warning);
                 if (result == DialogResult.OK)
                 {
-                    this.Hide();
+                    Hide();
                     FormBreak f2 = new FormBreak();
                     f2.ShowDialog();
-                    this.Close();
                 }
             }
             else
             {
-                this.Hide();
+                Hide();
                 FormBreak f2 = new FormBreak();
                 f2.ShowDialog();
-                this.Close();
             } 
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -213,6 +212,52 @@ namespace WorkLogTimer
         {
             FormSettings f5 = new FormSettings();
             f5.ShowDialog();
+        }
+        //Exit application on File - Exit click
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+        #endregion
+
+        #region Close to tray
+        private void FormWork_Resize(object sender, EventArgs e)
+        {
+            //if the form is minimized  
+            //hide it from the task bar  
+            //and show the system tray icon (represented by the NotifyIcon control)  
+            /*if (this.WindowState == FormWindowState.Minimized)
+            {
+                Hide();
+                notifyIcon1.Visible = true;
+                notifyIcon1.ShowBalloonTip(1000);
+            }*/
+        }
+        //Minimize to system tray on close
+        private void FormWork_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormSettings frm = new FormSettings();
+            frm.checkBoxMinimizeToTray.Checked = Properties.Settings.Default.SettingMinimizeTotray;
+            if (frm.checkBoxMinimizeToTray.CheckState == CheckState.Checked)
+            {
+                e.Cancel = true;
+                Hide();
+                notifyIconWork.Visible = true;
+                notifyIconWork.ShowBalloonTip(1000);
+            }
+        }
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+            notifyIconWork.Visible = false;
+        }
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            /*if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                // code for adding context menu
+            }*/
         }
         #endregion
     }

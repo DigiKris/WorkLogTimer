@@ -17,7 +17,7 @@ namespace WorkLogTimer
         {
             InitializeComponent();
         }
-        //Start with windows
+        #region Start with windows
         private void checkBoxStartWithWindows_CheckedChanged(object sender, EventArgs e)
         {
             RegistryKey rk = Registry.CurrentUser.OpenSubKey
@@ -28,5 +28,24 @@ namespace WorkLogTimer
             else
                 rk.DeleteValue("WorkLogTimer", false);
         }
+        #endregion
+
+        #region Close to tray
+        private void checkBoxMinimizeToTray_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FormSettings_Load(object sender, EventArgs e)
+        {
+            checkBoxMinimizeToTray.Checked = Properties.Settings.Default.SettingMinimizeTotray;
+        }
+
+        private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.SettingMinimizeTotray = checkBoxMinimizeToTray.Checked;
+            Properties.Settings.Default.Save();
+        }
+        #endregion
     }
 }

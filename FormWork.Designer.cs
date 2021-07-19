@@ -44,12 +44,15 @@ namespace WorkLogTimer
             this.buttonWorkPause = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.breakTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifyIconWork = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,6 +172,7 @@ namespace WorkLogTimer
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Black;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
             this.viewToolStripMenuItem,
             this.settingsToolStripMenuItem,
             this.aboutToolStripMenuItem});
@@ -177,6 +181,22 @@ namespace WorkLogTimer
             this.menuStrip1.Size = new System.Drawing.Size(279, 24);
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.DarkOrange;
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -192,20 +212,20 @@ namespace WorkLogTimer
             // breakTimerToolStripMenuItem
             // 
             this.breakTimerToolStripMenuItem.Name = "breakTimerToolStripMenuItem";
-            this.breakTimerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.breakTimerToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.breakTimerToolStripMenuItem.Text = "Break Timer";
             this.breakTimerToolStripMenuItem.Click += new System.EventHandler(this.breakTimerToolStripMenuItem_Click);
             // 
             // workTimerToolStripMenuItem
             // 
             this.workTimerToolStripMenuItem.Name = "workTimerToolStripMenuItem";
-            this.workTimerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.workTimerToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.workTimerToolStripMenuItem.Text = "Work Timer";
             // 
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.logToolStripMenuItem.Text = "Log";
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
             // 
@@ -225,6 +245,16 @@ namespace WorkLogTimer
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // notifyIconWork
+            // 
+            this.notifyIconWork.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIconWork.BalloonTipText = "Running in background";
+            this.notifyIconWork.BalloonTipTitle = "WorkLogTimer";
+            this.notifyIconWork.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconWork.Icon")));
+            this.notifyIconWork.Text = "WorkLogTimerWork";
+            this.notifyIconWork.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
+            this.notifyIconWork.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // FormWork
             // 
@@ -252,7 +282,9 @@ namespace WorkLogTimer
             this.Name = "FormWork";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WorkLogTimer Work";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormWork_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.FormWork_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -281,6 +313,9 @@ namespace WorkLogTimer
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        public System.Windows.Forms.NotifyIcon notifyIconWork;
     }
 }
 

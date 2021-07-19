@@ -42,6 +42,8 @@ namespace WorkLogTimer
             this.comboBoxBreakHours = new System.Windows.Forms.ComboBox();
             this.labelBreakHours = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.breakTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +51,7 @@ namespace WorkLogTimer
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerBreak = new System.Windows.Forms.Timer(this.components);
+            this.notifyIconBreak = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,6 +154,7 @@ namespace WorkLogTimer
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Black;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
             this.viewToolStripMenuItem,
             this.settingsToolStripMenuItem,
             this.aboutToolStripMenuItem});
@@ -159,6 +163,22 @@ namespace WorkLogTimer
             this.menuStrip1.Size = new System.Drawing.Size(279, 24);
             this.menuStrip1.TabIndex = 30;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.DarkOrange;
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -175,21 +195,21 @@ namespace WorkLogTimer
             // 
             this.breakTimerToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.breakTimerToolStripMenuItem.Name = "breakTimerToolStripMenuItem";
-            this.breakTimerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.breakTimerToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.breakTimerToolStripMenuItem.Text = "Break Timer";
             // 
             // workTimerToolStripMenuItem
             // 
             this.workTimerToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.workTimerToolStripMenuItem.Name = "workTimerToolStripMenuItem";
-            this.workTimerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.workTimerToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.workTimerToolStripMenuItem.Text = "Work Timer";
             this.workTimerToolStripMenuItem.Click += new System.EventHandler(this.workTimerToolStripMenuItem_Click);
             // 
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.logToolStripMenuItem.Text = "Log";
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
             // 
@@ -213,6 +233,15 @@ namespace WorkLogTimer
             // 
             this.timerBreak.Interval = 1000;
             this.timerBreak.Tick += new System.EventHandler(this.timerBreak_Tick);
+            // 
+            // notifyIconBreak
+            // 
+            this.notifyIconBreak.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIconBreak.BalloonTipText = "Running in background";
+            this.notifyIconBreak.BalloonTipTitle = "WorkLogTimer";
+            this.notifyIconBreak.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconBreak.Icon")));
+            this.notifyIconBreak.Text = "WorkLogTimerBreak";
+            this.notifyIconBreak.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconBreak_MouseDoubleClick);
             // 
             // FormBreak
             // 
@@ -238,6 +267,7 @@ namespace WorkLogTimer
             this.Name = "FormBreak";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WorkLogTimer Break";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormBreak_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -266,5 +296,8 @@ namespace WorkLogTimer
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        public System.Windows.Forms.NotifyIcon notifyIconBreak;
     }
 }

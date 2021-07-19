@@ -31,12 +31,13 @@ namespace WorkLogTimer
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettings));
             this.checkBoxStartWithWindows = new System.Windows.Forms.CheckBox();
+            this.checkBoxMinimizeToTray = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // checkBoxStartWithWindows
             // 
             this.checkBoxStartWithWindows.AutoSize = true;
-            this.checkBoxStartWithWindows.Location = new System.Drawing.Point(81, 66);
+            this.checkBoxStartWithWindows.Location = new System.Drawing.Point(81, 53);
             this.checkBoxStartWithWindows.Name = "checkBoxStartWithWindows";
             this.checkBoxStartWithWindows.Size = new System.Drawing.Size(128, 19);
             this.checkBoxStartWithWindows.TabIndex = 0;
@@ -44,12 +45,24 @@ namespace WorkLogTimer
             this.checkBoxStartWithWindows.UseVisualStyleBackColor = true;
             this.checkBoxStartWithWindows.CheckedChanged += new System.EventHandler(this.checkBoxStartWithWindows_CheckedChanged);
             // 
+            // checkBoxMinimizeToTray
+            // 
+            this.checkBoxMinimizeToTray.AutoSize = true;
+            this.checkBoxMinimizeToTray.Location = new System.Drawing.Point(81, 79);
+            this.checkBoxMinimizeToTray.Name = "checkBoxMinimizeToTray";
+            this.checkBoxMinimizeToTray.Size = new System.Drawing.Size(159, 19);
+            this.checkBoxMinimizeToTray.TabIndex = 1;
+            this.checkBoxMinimizeToTray.Text = "Minimize to tray on close";
+            this.checkBoxMinimizeToTray.UseVisualStyleBackColor = true;
+            this.checkBoxMinimizeToTray.CheckedChanged += new System.EventHandler(this.checkBoxMinimizeToTray_CheckedChanged);
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(293, 162);
+            this.Controls.Add(this.checkBoxMinimizeToTray);
             this.Controls.Add(this.checkBoxStartWithWindows);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -58,6 +71,8 @@ namespace WorkLogTimer
             this.Name = "FormSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "WorkLogTimer Settings";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSettings_FormClosing);
+            this.Load += new System.EventHandler(this.FormSettings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -66,5 +81,6 @@ namespace WorkLogTimer
         #endregion
 
         private System.Windows.Forms.CheckBox checkBoxStartWithWindows;
+        public System.Windows.Forms.CheckBox checkBoxMinimizeToTray;
     }
 }

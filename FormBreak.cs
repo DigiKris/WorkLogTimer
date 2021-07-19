@@ -162,10 +162,11 @@ namespace WorkLogTimer
 
                 Console.Beep();
 
-                this.Hide();
+                notifyIconBreak.Visible = false;
+
+                Hide();
                 FormWork f1 = new FormWork();
                 f1.ShowDialog();
-                this.Close();
 
                 buttonBreakStart.Enabled = true;
             }
@@ -184,18 +185,16 @@ namespace WorkLogTimer
                 DialogResult result = MessageBox.Show(messageBoxMessage, messageBoxTitle, buttons, MessageBoxIcon.Warning);
                 if (result == DialogResult.OK)
                 {
-                    this.Hide();
+                    Hide();
                     FormWork f1 = new FormWork();
                     f1.ShowDialog();
-                    this.Close();
                 }
             }
             else
             {
-                this.Hide();
+                Hide();
                 FormWork f1 = new FormWork();
                 f1.ShowDialog();
-                this.Close();
             }
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -212,6 +211,32 @@ namespace WorkLogTimer
         {
             FormLogWindow f4 = new FormLogWindow();
             f4.ShowDialog();
+        }
+        //Exit application on File - Exit click
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+        #endregion
+
+        #region Close to tray
+        private void FormBreak_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormSettings frm = new FormSettings();
+            frm.checkBoxMinimizeToTray.Checked = Properties.Settings.Default.SettingMinimizeTotray;
+            if (frm.checkBoxMinimizeToTray.CheckState == CheckState.Checked)
+            {
+                e.Cancel = true;
+                Hide();
+                notifyIconBreak.Visible = true;
+                notifyIconBreak.ShowBalloonTip(1000);
+            }
+        }
+        private void notifyIconBreak_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+            notifyIconBreak.Visible = false;
         }
         #endregion
     }
