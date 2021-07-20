@@ -4,6 +4,11 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>clock_hour_minute_second_time_timer_watch_icon_123193.ico</ApplicationIcon>
+    <Authors>DigiKris</Authors>
+    <Description>Windows desktop application to track work and break times and log them.</Description>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DigiKris/WorkLogTimer</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
