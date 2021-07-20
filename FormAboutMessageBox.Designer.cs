@@ -62,7 +62,7 @@ namespace WorkLogTimer
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(247, 23);
             this.labelVersion.TabIndex = 3;
-            this.labelVersion.Text = "0.0.0";
+            this.labelVersion.Text = "1.0.0";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormAboutMessageBox
