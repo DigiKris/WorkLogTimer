@@ -17,7 +17,7 @@ namespace WorkLogTimer
         {
             InitializeComponent();
 
-            TextReader reader = new StreamReader("WorkLogTimerLogFile.txt");
+            TextReader reader = new StreamReader(@"c:\temp\WorkLogTimerLogFile.txt");
             richTextBoxLog.Text = reader.ReadToEnd();
             reader.Close();
         }
