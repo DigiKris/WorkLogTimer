@@ -238,6 +238,11 @@ namespace WorkLogTimer
             WindowState = FormWindowState.Normal;
             notifyIconBreak.Visible = false;
         }
+        //ContextMenu system tray icon right click exit
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
         #endregion
     }
 }

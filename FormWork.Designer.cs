@@ -43,6 +43,7 @@ namespace WorkLogTimer
             this.timerWork = new System.Windows.Forms.Timer(this.components);
             this.buttonWorkPause = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +54,7 @@ namespace WorkLogTimer
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIconWork = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,8 +167,17 @@ namespace WorkLogTimer
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(93, 26);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
             // menuStrip1
             // 
@@ -251,9 +262,9 @@ namespace WorkLogTimer
             this.notifyIconWork.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.notifyIconWork.BalloonTipText = "Running in background";
             this.notifyIconWork.BalloonTipTitle = "WorkLogTimer";
+            this.notifyIconWork.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIconWork.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconWork.Icon")));
             this.notifyIconWork.Text = "WorkLogTimerWork";
-            this.notifyIconWork.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
             this.notifyIconWork.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // FormWork
@@ -285,6 +296,7 @@ namespace WorkLogTimer
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormWork_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.FormWork_Resize);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -316,6 +328,7 @@ namespace WorkLogTimer
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         public System.Windows.Forms.NotifyIcon notifyIconWork;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
     }
 }
 

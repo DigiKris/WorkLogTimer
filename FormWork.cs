@@ -251,12 +251,10 @@ namespace WorkLogTimer
             WindowState = FormWindowState.Normal;
             notifyIconWork.Visible = false;
         }
-        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        //ContextMenu system tray icon right click exit
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            /*if (e.Button == System.Windows.Forms.MouseButtons.Right)
-            {
-                // code for adding context menu
-            }*/
+            Environment.Exit(0);
         }
         #endregion
     }
