@@ -33,12 +33,13 @@ namespace WorkLogTimer
             this.labellabelWorkLogTimerby = new System.Windows.Forms.Label();
             this.linkLabelDigiKris = new System.Windows.Forms.LinkLabel();
             this.labelVersion = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // labellabelWorkLogTimerby
             // 
             this.labellabelWorkLogTimerby.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labellabelWorkLogTimerby.Location = new System.Drawing.Point(41, 22);
+            this.labellabelWorkLogTimerby.Location = new System.Drawing.Point(41, 13);
             this.labellabelWorkLogTimerby.Name = "labellabelWorkLogTimerby";
             this.labellabelWorkLogTimerby.Size = new System.Drawing.Size(114, 23);
             this.labellabelWorkLogTimerby.TabIndex = 1;
@@ -47,7 +48,7 @@ namespace WorkLogTimer
             // 
             // linkLabelDigiKris
             // 
-            this.linkLabelDigiKris.Location = new System.Drawing.Point(150, 26);
+            this.linkLabelDigiKris.Location = new System.Drawing.Point(150, 17);
             this.linkLabelDigiKris.Name = "linkLabelDigiKris";
             this.linkLabelDigiKris.Size = new System.Drawing.Size(51, 23);
             this.linkLabelDigiKris.TabIndex = 2;
@@ -58,19 +59,31 @@ namespace WorkLogTimer
             // labelVersion
             // 
             this.labelVersion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelVersion.Location = new System.Drawing.Point(2, 45);
+            this.labelVersion.Location = new System.Drawing.Point(2, 36);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(247, 23);
             this.labelVersion.TabIndex = 3;
             this.labelVersion.Text = "1.0.0";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(62, 59);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(123, 15);
+            this.linkLabel1.TabIndex = 4;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://kkristjan.com/";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // FormAboutMessageBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(253, 91);
+            this.ClientSize = new System.Drawing.Size(253, 94);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.linkLabelDigiKris);
             this.Controls.Add(this.labellabelWorkLogTimerby);
@@ -82,6 +95,7 @@ namespace WorkLogTimer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "WorkLogTimer About";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -89,5 +103,6 @@ namespace WorkLogTimer
         private System.Windows.Forms.Label labellabelWorkLogTimerby;
         private System.Windows.Forms.LinkLabel linkLabelDigiKris;
         private System.Windows.Forms.Label labelVersion;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

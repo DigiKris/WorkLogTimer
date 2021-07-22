@@ -22,5 +22,10 @@ namespace WorkLogTimer
         {
             Process.Start(new ProcessStartInfo("https://github.com/DigiKris") { UseShellExecute = true });
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://kkristjan.com/") { UseShellExecute = true });
+        }
     }
 }
