@@ -62,6 +62,9 @@ namespace WorkLogTimer
 
             //For file writing
             FileInfo logFile = new FileInfo(@"c:\temp\WorkLogTimerLogFile.txt");
+            logFile.Directory.Create();
+            //String fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "WorkLogTimerLog.txt");
+            //string fileName = System.IO.Path.Combine(Environment.SpecialFolder.MyDocuments.ToString(), "userinfo.txt");
             buttonStartClick = DateTime.Now;
             labelWorkCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
             DateTime startTime = DateTime.Now;
@@ -91,6 +94,7 @@ namespace WorkLogTimer
 
             //For file writing
             FileInfo logFile = new FileInfo(@"c:\temp\WorkLogTimerLogFile.txt");
+            logFile.Directory.Create();
             DateTime pauseResumeTime = DateTime.Now;
             using (StreamWriter sw = logFile.AppendText())
             {
@@ -116,6 +120,7 @@ namespace WorkLogTimer
 
             //For writefile
             FileInfo logFile = new FileInfo(@"c:\temp\WorkLogTimerLogFile.txt");
+            logFile.Directory.Create();
             buttonStopClick = DateTime.Now;
             TimeSpan timespan = buttonStopClick - buttonStartClick;
             DateTime stopTime = DateTime.Now;
