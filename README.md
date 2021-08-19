@@ -11,6 +11,9 @@
 4. Automatic navigation on timer end. 
 5. Quotes or motivational messages on timer finish.
 
+## Download 
+<a href="https://kkristjan.com/#downloads" target="_blank">Download</a> 
+
 ## Author 
 **DigiKris** 
-<a href="https://kkristjan.com/" target="_blank">kkristjan.com</a>
+<a href="https://kkristjan.com/" target="_blank">kkristjan.com</a> 
