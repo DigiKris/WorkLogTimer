@@ -11,6 +11,10 @@
 4. Automatic navigation on timer end. 
 5. Quotes or motivational messages on timer finish.
 
+## Updates
+Release 1.0.1 - Fixed WLT going multiple times to system tray when timer finishes and manually navigating to another screen. 
+Uninstall old version and install the new one.
+
 ## Download 
 <a href="https://kkristjan.com/#downloads" target="_blank">Download</a> 
 
