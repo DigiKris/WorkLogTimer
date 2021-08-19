@@ -160,14 +160,14 @@ namespace WorkLogTimer
                 
                 string messageBoxTitle = "WorkLogTimer Time's up!";
                 MessageBox.Show(messageList[index], messageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
+                
                 Console.Beep();
-
+                
                 notifyIconWork.Visible = false;
 
-                Hide();
-                FormBreak f2 = new FormBreak();
-                f2.ShowDialog();
+                FormBreak formBreak = new FormBreak();
+                formBreak.Show();
+                WindowState = FormWindowState.Normal;
 
                 buttonWorkStart.Enabled = true;
             }

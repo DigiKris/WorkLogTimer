@@ -146,7 +146,6 @@ namespace WorkLogTimer
 
                 labelBreakCountdown.Text = hours.ToString().PadLeft(2, '0') + ":" + minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
             }
-
             else
             {
                 timerBreak.Stop();
@@ -162,14 +161,14 @@ namespace WorkLogTimer
 
                 string messageBoxTitle = "WorkLogTimer Time's up!";
                 MessageBox.Show(messageList[index], messageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
+                
                 Console.Beep();
-
+                
                 notifyIconBreak.Visible = false;
 
-                Hide();
-                FormWork f1 = new FormWork();
-                f1.ShowDialog();
+                FormWork formWork = new FormWork();
+                formWork.Show();
+                WindowState = FormWindowState.Normal;
 
                 buttonBreakStart.Enabled = true;
             }
