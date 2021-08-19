@@ -9,6 +9,9 @@
     <Description>Windows desktop application to track work and break times and log them.</Description>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/DigiKris/WorkLogTimer</RepositoryUrl>
+    <Version>1.0.1</Version>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>SignatureWLT.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
