@@ -8,6 +8,8 @@
 1. Timer for work and break.
 2. Log.
 3. Settings for minimize to tray on close and start with Windows.
+4. Automatic navigation on timer end. 
+5. Quotes or motivational messages on timer finish.
 
 ## Author 
 **DigiKris** 
