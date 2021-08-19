@@ -1,6 +1,6 @@
 # WorkLogTimer
 ## About
-Track work and break times and log them
+**Track work and break times and log them**
 
 <img src ="Resources/WorkLogTimer.jpg"> 
 
@@ -11,4 +11,4 @@ Track work and break times and log them
 
 ## Author 
 **DigiKris** 
-[kkristjan.com](https://kkristjan.com/).
+<a href="https://kkristjan.com/" target="_blank">kkristjan.com</a>
