@@ -10,7 +10,7 @@
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/DigiKris/WorkLogTimer</RepositoryUrl>
     <Version>1.0.1</Version>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>SignatureWLT.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
