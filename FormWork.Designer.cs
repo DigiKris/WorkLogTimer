@@ -265,7 +265,7 @@ namespace WorkLogTimer
             this.notifyIconWork.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIconWork.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconWork.Icon")));
             this.notifyIconWork.Text = "WorkLogTimerWork";
-            this.notifyIconWork.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            this.notifyIconWork.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconWork_MouseDoubleClick);
             // 
             // FormWork
             // 

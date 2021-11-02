@@ -24,6 +24,10 @@ namespace WorkLogTimer
         {
             InitializeComponent();
         }
+        private void FormWork_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
         #region Add to combobox
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -167,6 +171,7 @@ namespace WorkLogTimer
 
                 FormBreak formBreak = new FormBreak();
                 formBreak.Show();
+                this.Hide();
                 WindowState = FormWindowState.Normal;
 
                 buttonWorkStart.Enabled = true;
@@ -227,30 +232,19 @@ namespace WorkLogTimer
         #region Close to tray
         private void FormWork_Resize(object sender, EventArgs e)
         {
-            //if the form is minimized  
-            //hide it from the task bar  
-            //and show the system tray icon (represented by the NotifyIcon control)  
-            /*if (this.WindowState == FormWindowState.Minimized)
+            FormSettings FormSettings = new FormSettings();
+            FormSettings.checkBoxMinimizeToTray.Checked = Properties.Settings.Default.SettingMinimizeTotray;
+            if (FormSettings.checkBoxMinimizeToTray.CheckState == CheckState.Checked)
             {
-                Hide();
-                notifyIcon1.Visible = true;
-                notifyIcon1.ShowBalloonTip(1000);
-            }*/
-        }
-        //Minimize to system tray on close
-        private void FormWork_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            FormSettings frm = new FormSettings();
-            frm.checkBoxMinimizeToTray.Checked = Properties.Settings.Default.SettingMinimizeTotray;
-            if (frm.checkBoxMinimizeToTray.CheckState == CheckState.Checked)
-            {
-                e.Cancel = true;
-                Hide();
-                notifyIconWork.Visible = true;
-                notifyIconWork.ShowBalloonTip(1000);
+                if (WindowState == FormWindowState.Minimized)
+                {
+                    Hide();
+                    notifyIconWork.Visible = true;
+                    notifyIconWork.ShowBalloonTip(1000);
+                }
             }
         }
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void notifyIconWork_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Show();
             WindowState = FormWindowState.Normal;

@@ -287,6 +287,7 @@ namespace WorkLogTimer
             this.Text = "WorkLogTimer Break";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormBreak_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.Resize += new System.EventHandler(this.FormBreak_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);

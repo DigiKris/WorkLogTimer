@@ -168,6 +168,7 @@ namespace WorkLogTimer
 
                 FormWork formWork = new FormWork();
                 formWork.Show();
+                this.Hide();
                 WindowState = FormWindowState.Normal;
 
                 buttonBreakStart.Enabled = true;
@@ -224,15 +225,7 @@ namespace WorkLogTimer
         #region Close to tray
         private void FormBreak_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FormSettings frm = new FormSettings();
-            frm.checkBoxMinimizeToTray.Checked = Properties.Settings.Default.SettingMinimizeTotray;
-            if (frm.checkBoxMinimizeToTray.CheckState == CheckState.Checked)
-            {
-                e.Cancel = true;
-                Hide();
-                notifyIconBreak.Visible = true;
-                notifyIconBreak.ShowBalloonTip(1000);
-            }
+            Application.Exit();
         }
         private void notifyIconBreak_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -246,5 +239,17 @@ namespace WorkLogTimer
             Environment.Exit(0);
         }
         #endregion
+
+        private void FormBreak_Resize(object sender, EventArgs e)
+        {
+            FormSettings frm = new FormSettings();
+            frm.checkBoxMinimizeToTray.Checked = Properties.Settings.Default.SettingMinimizeTotray;
+            if (frm.checkBoxMinimizeToTray.CheckState == CheckState.Checked)
+            {
+                Hide();
+                notifyIconBreak.Visible = true;
+                notifyIconBreak.ShowBalloonTip(1000);
+            }
+        }
     }
 }

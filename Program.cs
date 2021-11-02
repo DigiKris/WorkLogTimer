@@ -17,7 +17,12 @@ namespace WorkLogTimer
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormWork());
+
+            //Detatch application from FormWork
+            /*Application.Run(new FormWork());*/
+            FormWork FormWork = new FormWork();
+            FormWork.Show();
+            Application.Run();
         }
     }
 }
