@@ -50,9 +50,9 @@ namespace WorkLogTimer
             this.checkBoxMinimizeToTray.AutoSize = true;
             this.checkBoxMinimizeToTray.Location = new System.Drawing.Point(81, 79);
             this.checkBoxMinimizeToTray.Name = "checkBoxMinimizeToTray";
-            this.checkBoxMinimizeToTray.Size = new System.Drawing.Size(159, 19);
+            this.checkBoxMinimizeToTray.Size = new System.Drawing.Size(112, 19);
             this.checkBoxMinimizeToTray.TabIndex = 1;
-            this.checkBoxMinimizeToTray.Text = "Minimize to tray on close";
+            this.checkBoxMinimizeToTray.Text = "Minimize to tray";
             this.checkBoxMinimizeToTray.UseVisualStyleBackColor = true;
             this.checkBoxMinimizeToTray.CheckedChanged += new System.EventHandler(this.checkBoxMinimizeToTray_CheckedChanged);
             // 

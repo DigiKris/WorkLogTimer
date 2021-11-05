@@ -24,6 +24,10 @@ namespace WorkLogTimer
         {
             InitializeComponent();
         }
+        private void FormBreak_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
         #region Add to combobox
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -223,9 +227,19 @@ namespace WorkLogTimer
         #endregion
 
         #region Close to tray
-        private void FormBreak_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormBreak_Resize(object sender, EventArgs e)
         {
-            Application.Exit();
+            FormSettings FormSettings = new FormSettings();
+            FormSettings.checkBoxMinimizeToTray.Checked = Properties.Settings.Default.SettingMinimizeTotray;
+            if (FormSettings.checkBoxMinimizeToTray.CheckState == CheckState.Checked)
+            {
+                if (WindowState == FormWindowState.Minimized)
+                {
+                    Hide();
+                    notifyIconBreak.Visible = true;
+                    notifyIconBreak.ShowBalloonTip(1000);
+                }
+            }
         }
         private void notifyIconBreak_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -239,17 +253,5 @@ namespace WorkLogTimer
             Environment.Exit(0);
         }
         #endregion
-
-        private void FormBreak_Resize(object sender, EventArgs e)
-        {
-            FormSettings frm = new FormSettings();
-            frm.checkBoxMinimizeToTray.Checked = Properties.Settings.Default.SettingMinimizeTotray;
-            if (frm.checkBoxMinimizeToTray.CheckState == CheckState.Checked)
-            {
-                Hide();
-                notifyIconBreak.Visible = true;
-                notifyIconBreak.ShowBalloonTip(1000);
-            }
-        }
     }
 }
