@@ -229,10 +229,13 @@ namespace WorkLogTimer
             FormSettings.checkBoxMinimizeToTray.Checked = Properties.Settings.Default.SettingMinimizeTotray;
             if (FormSettings.checkBoxMinimizeToTray.CheckState == CheckState.Checked)
             {
-                Hide();
-                notifyIconBreak.Visible = true;
-                notifyIconBreak.ShowBalloonTip(1000);
-            }
+                if (WindowState == FormWindowState.Minimized)
+                {
+                    Hide();
+                    notifyIconBreak.Visible = true;
+                    notifyIconBreak.ShowBalloonTip(1000);
+                }
+            }   
         }
         private void FormBreak_FormClosing(object sender, FormClosingEventArgs e)
         {

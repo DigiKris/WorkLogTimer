@@ -195,8 +195,8 @@ namespace WorkLogTimer
             else
             {
                 Hide();
-                FormBreak f2 = new FormBreak();
-                f2.ShowDialog();
+                FormBreak formBreak = new FormBreak();
+                formBreak.Show();
             } 
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -232,20 +232,23 @@ namespace WorkLogTimer
             FormSettings.checkBoxMinimizeToTray.Checked = Properties.Settings.Default.SettingMinimizeTotray;
             if (FormSettings.checkBoxMinimizeToTray.CheckState == CheckState.Checked)
             {
-                Hide();
-                notifyIconWork.Visible = true;
-                notifyIconWork.ShowBalloonTip(1000);
-            }
+                if (WindowState == FormWindowState.Minimized)
+                {
+                    Hide();
+                    notifyIconWork.Visible = true;
+                    notifyIconWork.ShowBalloonTip(1000);
+                }
+            } 
         }
         private void FormWork_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit(); 
+            Application.Exit();
         }
         private void notifyIconWork_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Show();
             WindowState = FormWindowState.Normal;
-            notifyIconWork.Visible = false;
+            notifyIconWork.Visible = false; 
         }
         //ContextMenu system tray icon right click exit
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
