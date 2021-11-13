@@ -16,7 +16,9 @@ WorkLogTimer or WLT
 ## Updates
 Release 1.0.1 - Fixed WLT going multiple times to system tray when timer finishes and manually navigating to another screen.
 
-Release 2.0.0 - WLT no longer uses minimize to tray on close setting - instead it is minimize to tray.
+Release 2.0.0 - WLT no longer uses minimize to tray on close setting - instead it is minimize to tray. 
+
+Release 2.0.1 - Fixed error where mouse double click on WLT in system tray did not open correctly.
 
 ## Download 
 <a href="https://kkristjan.com/#downloads" target="_blank">Download</a> 
