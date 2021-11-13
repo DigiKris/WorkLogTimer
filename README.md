@@ -24,3 +24,6 @@ Release 2.0.0 - WLT no longer uses minimize to tray on close setting - instead i
 ## Author 
 **DigiKris** 
 <a href="https://kkristjan.com/" target="_blank">kkristjan.com</a> 
+
+## Questions, feature recommendations and bug reports 
+kristjan@kkristjan.com
